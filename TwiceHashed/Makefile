@@ -24,14 +24,6 @@ bench: bench_hash.cpp HashTable.cpp
 	@echo "=== ЗАПУСК БЕНЧМАРКОВ ==="
 	./$(BENCH_PROGRAM)
 
-# coverage: clean_cov
-# 	$(CXX) $(CXXFLAGS) $(COV_FLAGS) test_hash.cpp HashTable.cpp -o $(TEST_PROGRAM)_cov $(LDFLAGS)
-# 	./$(TEST_PROGRAM)_cov
-# 	lcov --capture --directory . --output-file coverage.info --no-external --ignore-errors inconsistent
-# 	lcov --remove coverage.info '/usr/*' '*/boost/*' --output-file coverage.info
-# 	genhtml coverage.info --output-directory $(REPORT_DIR)
-# 	@echo "Coverage report: $(REPORT_DIR)/index.html"
-
 coverage: clean_cov
 	$(CXX) $(CXXFLAGS) $(COV_FLAGS) test_hash.cpp HashTable.cpp -o $(TEST_PROGRAM)_cov $(LDFLAGS)
 	./$(TEST_PROGRAM)_cov

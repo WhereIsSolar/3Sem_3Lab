@@ -33,7 +33,7 @@ public:
 class RBTree {
 private:
     RBNode* root;
-    RBNode* NIL;  // sentinel NIL-узел
+    RBNode* NIL; 
 
     void leftRotate(RBNode* x);
     void rightRotate(RBNode* y);

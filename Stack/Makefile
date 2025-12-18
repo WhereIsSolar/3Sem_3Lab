@@ -32,7 +32,7 @@ coverage: clean_cov
 	@lcov --capture --directory . --output-file coverage.info --no-external --ignore-errors inconsistent 2>/dev/null || echo "lcov: сбор данных"
 	@lcov --remove coverage.info '/usr/*' '*/boost/*' --output-file coverage.info 2>/dev/null || true
 	@genhtml coverage.info --output-directory $(REPORT_DIR) --title "Stack Coverage Report" 2>/dev/null || echo "genhtml: генерация"
-	@echo "✅ Отчёт: $(REPORT_DIR)/index.html"
+	@echo "Отчёт: $(REPORT_DIR)/index.html"
 
 lint:
 	@echo "=== ПРОВЕРКА CLANG-TIDY ==="

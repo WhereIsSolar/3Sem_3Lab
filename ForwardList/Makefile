@@ -24,20 +24,15 @@ bench: bench.cpp ForwardList.cpp
 		-lboost_unit_test_framework -lboost_chrono -lpthread
 	./list_bench --catch_system_errors=no
 
-# ИСПРАВЛЕННАЯ ЦЕЛЬ COVERAGE
 coverage: clean_cov
 	$(CXX) $(CXXFLAGS) $(COV_FLAGS) test.cpp ForwardList.cpp -o $(TEST_PROGRAM)_cov $(LDFLAGS)
-	@# Запускаем тесты, НЕ игнорируем выход с кодом ошибки
 	@./$(TEST_PROGRAM)_cov --catch_system_errors=no 2>/dev/null || echo "Тесты завершены (возможны ошибки)"
-	@# Ждём немного чтобы файлы .gcda записались
 	@sleep 0.1
-	@# Собираем coverage даже если тесты упали
 	@lcov --capture --directory . --output-file coverage.info --no-external --ignore-errors inconsistent 2>/dev/null || echo "lcov: сбор данных"
 	@lcov --remove coverage.info '/usr/*' '*/boost/*' --output-file coverage.info 2>/dev/null || true
 	@genhtml coverage.info --output-directory $(REPORT_DIR) --title "Coverage Report" 2>/dev/null || echo "genhtml: генерация"
-	@echo "✅ Отчёт: $(REPORT_DIR)/index.html"
+	@echo " Отчёт: $(REPORT_DIR)/index.html"
 
-# Линтер - базовая версия без конфига
 lint:
 	@echo "=== ПРОВЕРКА CLANG-TIDY ==="
 	@if command -v clang-tidy >/dev/null 2>&1; then \
