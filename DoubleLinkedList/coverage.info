@@ -1,5 +1,5 @@
 TN:
-SF:/home/amans/Desktop/LABS_SECOND_SEM/3laba/DoubleLinkedList/DoubleLinked.cpp
+SF:/home/amans/Desktop/2course/LABS_SECOND_SEM/3laba/DoubleLinkedList/DoubleLinked.cpp
 FNL:0,10,10
 FNA:0,10461,_ZNK5DNode7getNextEv
 FNL:1,111,123
@@ -235,7 +235,7 @@ LF:171
 LH:168
 end_of_record
 TN:
-SF:/home/amans/Desktop/LABS_SECOND_SEM/3laba/DoubleLinkedList/test_dlist.cpp
+SF:/home/amans/Desktop/2course/LABS_SECOND_SEM/3laba/DoubleLinkedList/test_dlist.cpp
 FNL:0,113,130
 FNA:0,1,_ZL26test_remove_before_invokerv
 FNA:0,1,_ZN18test_remove_before11test_methodEv
